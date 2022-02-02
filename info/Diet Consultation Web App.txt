@@ -1,0 +1,7 @@
+Template to follow for Daily feeding chart/timetable is in
+Templates/BootStrap_themes/projs/Coffee Shop Buisness Template
+In Store Page
+
+Template to follow for index page is
+Templates/BootStrap_themes/projs/medino
+In Index page

@@ -1,0 +1,60 @@
+Diet Plans
+- Plan
+- Summary
+- Description
+- To Eat (List)
+- To Avoid (List)
+- Image
+- dietSuper (If this is a sub diet (e.g B+ Diet Under Blood Group Diet))
+- calorieTracking? (If the diet tracks calorie intake)
+- caloriePerDay?
+- isBloodGroup? (if this is blood group enabled)
+
+Foods (Under a diet plan)
+- Diet Plan ID
+- Food
+- FoodList
+- Info
+- Image?
+- Consumption (Enum: To Eat, Not to eat)
+- Moderation? (Enum: Little Quantity, Medium Quantity, Large Quantity)
+- hourPreferred (Enum: Breakfast, Lunch, Dinner, Any time)
+
+Snacks (Under a diet plan)
+- Diet Plan ID
+- Snack
+- Info
+- Moderation?
+- Image?
+
+Liquid Intake (Under a diet plan)
+- Diet Plan ID
+- Liquid
+- Info
+- Moderation?
+- Image?
+- hourPreferred (Enum: Breakfast, Lunch, Dinner, Any time)
+
+
+Data Gotten From User
+- First Name
+- Last Name
+- Gender
+- Age?
+- Weight?
+- Height?
+- Blood Group? (Enum: AB, B+, B-, ...)
+- Email
+- Password
+- Chosen Plan?
+- Suggested Plan?
+
+
+Data User Generated for the user
+- Suggested Meal Plan
+- Foods to avoid (based on meal plan)
+- Foods to eat (based on meal plan)
+- What to drink? (based on meal plan)
+- Okay Snacks? (based on meal plan)
+- Shopping List (based on meal plan)
+- Suggested Calorie Intake?
