@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Page Title -->
-    <title>Diet Consult</title>
+    <title>Diet Consult | <?php echo $page_title; ?></title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo base_url('assets/images/logo/favicon.png'); ?>" type="image/x-icon">
@@ -22,6 +22,8 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/linearicons.css'); ?>">
     <!-- <link rel="stylesheet" href="<?php echo base_url('assets/css/nice-select.css'); ?>"> -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
+    <!-- Javascript -->
+    <script src="<?php echo base_url('assets/js/vendor/jquery-2.2.4.min.js'); ?>"></script>
 </head>
 
 <body>
@@ -71,7 +73,7 @@
                                 <a href="<?php echo base_url(); ?>">Home</a>
                             </li>
                             <li class="menu-has-children">
-                                <a href="<?php echo base_url('mealplans'); ?>">Meal Plans</a>
+                                <a href="<?php echo base_url('#mealplans'); ?>">Meal Plans</a>
                                 <!-- <ul>
                                     <li><a href="<?php echo base_url('mealplans/info/'); ?>">about us</a></li>
                                     <li><a href="<?php echo base_url('mealplans/info/'); ?>">elements</a></li>

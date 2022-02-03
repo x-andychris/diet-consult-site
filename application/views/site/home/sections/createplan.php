@@ -3,26 +3,52 @@
         <div class="col-lg-6 offset-lg-3">
             <div class="section-top text-center">
                 <h2>Get a personalized diet plan</h2>
-                <p>Green above he cattle god saw day multiply under fill in the cattle fowl a all, living, tree word
-                    link available in the service for subdue fruit.</p>
+                <p>Our plan covers breakfast, lunch and dinner for a week.</p>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-4">
             <div class="single-patient mb-4">
-                <img src="<?php echo base_url('assets/images/patient1.png'); ?>" alt="">
-                <h3>daren jhonson</h3>
-                <h5>hp specialist</h5>
-                <p class="pt-3">Elementum libero hac leo integer. Risus hac road parturient feugiat. Litora cursus
-                    hendrerit bib elit Tempus inceptos posuere metus.</p>
+                <!-- <img src="<?php echo base_url('assets/images/patient1.png'); ?>" alt=""> -->
+                <img src="<?php echo base_url('assets/images/hand-one.png'); ?>"
+                    style="object-fit: cover; background-color: white" alt="">
+                <h3>Why?</h3>
+                <!-- <h5>hp specialist</h5> -->
+                <ul class="unordered-list">
+                    <li>
+                        Make better choices when dining out.
+                    </li>
+                    <li>
+                        Plan and cook healthy meals at home.
+                    </li>
+                    <li>
+                        Read food labels and choose healthy foods at the grocery store.
+                    </li>
+                </ul>
             </div>
             <div class="single-patient">
-                <img src="<?php echo base_url('assets/images/patient2.png'); ?>" alt="">
-                <h3>black heiden</h3>
-                <h5>hp specialist</h5>
-                <p class="pt-3">Elementum libero hac leo integer. Risus hac road parturient feugiat. Litora cursus
-                    hendrerit bib elit Tempus inceptos posuere metus.</p>
+                <!-- <img src="<?php echo base_url('assets/images/patient2.png'); ?>" alt=""> -->
+                <img src="<?php echo base_url('assets/images/hand-two-2.png'); ?>" style="object-fit: cover" alt="">
+                <h3>What you get</h3>
+                <!-- <h5></h5> -->
+                <ul class="unordered-list">
+                    <li>
+                        A Meal Plan
+                    </li>
+                    <ul>
+                        <li>What to eat
+                            <ul>
+                                <li>Food</li>
+                                <li>Liquids</li>
+                                <li>Snacks</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <li>
+                        A Shopping List
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="col-lg-6 offset-lg-1 align-self-center">
@@ -45,14 +71,14 @@
                             onblur="this.placeholder = 'Date of birth'">
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 form-group">
+                        <div class="col-sm-6 col-6 form-group">
                             <select class="form-control" required>
                                 <option value="" selected hidden disabled> Select Gender </option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
-                        <div class="col-sm-6 form-group">
+                        <div class="col-sm-6 col-6 form-group">
                             <select class="form-control" required>
                                 <option value="" selected hidden disabled>Select Blood Group</option>
                                 <option value="A-">A-</option>
@@ -67,11 +93,11 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-6 form-group">
+                        <div class="col-sm-6 col-6 form-group">
                             <input type="number" placeholder="Weight (Kg)" onfocus="this.placeholder = ''"
                                 onblur="this.placeholder = 'Weight (Kg)'" required>
                         </div>
-                        <div class="col-sm-6 form-group">
+                        <div class="col-sm-6 col-6 form-group">
                             <input type="number" placeholder="Height (Ft)" onfocus="this.placeholder = ''"
                                 onblur="this.placeholder = 'Height (Ft)'" required>
                         </div>

@@ -1,5 +1,5 @@
         <!-- Hotline Area Starts -->
-        <section class="hotline-area text-center section-padding">
+        <!-- <section class="hotline-area text-center section-padding">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-12">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- Hotline Area End -->
 
         <!-- News Area Starts -->
@@ -171,8 +171,15 @@
         </footer>
         <!-- Footer Area End -->
 
+        <!-- Toast Area start -->
+        <!-- <div style="position: fixed; top: 6%; right: 1%; background-color: white; padding: 10px; width: 300px"> -->
+        <div>
+            <?php $this->load->view('inc/site/sections/toast');?>
+        </div>
+        <!-- Toast Area End -->
+
         <!-- Javascript -->
-        <script src="<?php echo base_url('assets/js/vendor/jquery-2.2.4.min.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/vendor/popper.min.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/vendor/bootstrap-4.1.3.min.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/vendor/wow.min.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/vendor/owl-carousel.min.js'); ?>"></script>
@@ -180,6 +187,7 @@
         <!-- <script src="<?php echo base_url('assets/js/vendor/jquery.nice-select.min.js'); ?>"></script> -->
         <script src="<?php echo base_url('assets/js/vendor/superfish.min.js'); ?>"></script>
         <script src="<?php echo base_url('assets/js/main.js'); ?>"></script>
+        <script src="<?php echo base_url('assets/js/vendor/bootstrap.bundle.min.js'); ?>"></script>
 
         </body>
 

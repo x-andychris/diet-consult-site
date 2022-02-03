@@ -13,6 +13,7 @@ class Home extends CI_Controller {
         $this -> load -> model('Foods_Model');
         $this -> load -> model('Liquids_Model');
         $this -> load -> model('Snacks_Model');
+        $this -> load -> model('Ingredients_Model');
         
     }
 	
@@ -44,8 +45,11 @@ class Home extends CI_Controller {
 		
 		// checking if meal plan exists
 		$mealplan_info = $this -> DietTypes_Model -> get_info($diet_type_id);
-		if (!mealplan_info){
-			$this->load->view('inc/errors/error_404'); return;
+		if (!$mealplan_info){
+			$data["page_title"] = "404";
+			$this->load->view('inc/site/header', $data);
+			$this->load->view('inc/errors/error_404'); 
+			$this->load->view('inc/site/footer', $data); return;
 		}
 		
 		$data["page_title"] = $mealplan_info -> plan;

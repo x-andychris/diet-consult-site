@@ -158,7 +158,7 @@
         });
 
         // // Nice Select
-        $('select').niceSelect();
+        // $('select').niceSelect();
 
 
         // Google Map
