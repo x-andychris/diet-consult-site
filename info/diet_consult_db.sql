@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 03, 2022 at 07:05 PM
+-- Generation Time: Feb 08, 2022 at 04:26 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -207,6 +207,25 @@ INSERT INTO `snacks` (`snack_id`, `diet_type_id`, `snack`, `info`, `image`, `con
 (1, 1, 'Date & peanut butter dip', 'This sweet dip works really well with savoury crisp veg', NULL, 'Take', 'Any', 'Any', '2022-02-03 14:26:06'),
 (2, 1, 'Cinnamon baked oats with blueberries', 'These mini oat pots topped with yogurt and berries make a great little snack.', NULL, 'Take', 'Any', 'Any', '2022-02-03 14:26:06');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `to_eat`
+--
+
+CREATE TABLE `to_eat` (
+  `ingredient_id` int(11) NOT NULL,
+  `diet_type_id` int(11) NOT NULL,
+  `ingredient` varchar(450) NOT NULL,
+  `food_list` varchar(1500) DEFAULT NULL,
+  `info` varchar(4500) DEFAULT NULL,
+  `image` varchar(50) DEFAULT NULL,
+  `consumption` enum('Take','Avoid') NOT NULL,
+  `moderation` enum('Little','Medium','Large','Any') NOT NULL DEFAULT 'Any',
+  `hour_preferred` enum('Breakfast','Lunch','Dinner','Any') NOT NULL DEFAULT 'Any',
+  `date_added` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
@@ -248,6 +267,12 @@ ALTER TABLE `snacks`
   ADD PRIMARY KEY (`snack_id`);
 
 --
+-- Indexes for table `to_eat`
+--
+ALTER TABLE `to_eat`
+  ADD PRIMARY KEY (`ingredient_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -286,6 +311,12 @@ ALTER TABLE `shoppinglist`
 --
 ALTER TABLE `snacks`
   MODIFY `snack_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `to_eat`
+--
+ALTER TABLE `to_eat`
+  MODIFY `ingredient_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

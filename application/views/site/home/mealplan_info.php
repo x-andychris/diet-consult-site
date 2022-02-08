@@ -1,4 +1,4 @@
-<!--================Blog Area =================-->
+<!--================ Info Area =================-->
 <section class="blog_area section-padding">
     <div class="container">
         <div class="row">
@@ -23,12 +23,6 @@
                                 <li><a href="#">Is Blood Group? Y<i class="fa fa-calendar-o"></i></a></li>
                                 <li><a href="#">Calorie Tracking? Y<i class="fa fa-eye"></i></a></li>
                             </ul>
-                            <!-- <ul class="social-links">
-                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                                <li><a href="#"><i class="fa fa-github"></i></a></li>
-                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                            </ul> -->
                         </div>
                     </div>
                     <div class="col-lg-9 col-md-9 blog_details">
@@ -48,31 +42,36 @@
                 <div class="blog_right_sidebar">
                     <aside class="single_sidebar_widget search_widget">
                         <div class="input-group">
-                            <button class="widget_title form-control">Select Plan</button>
+                            <button class="widget_title form-control" style="cursor: pointer">Select Plan</button>
                         </div>
                         <div class="br"></div>
                     </aside>
 
                     <aside class="single_sidebar_widget post_category_widget">
-                        <h4 class="widget_title">Meal Plan</h4>
+                        <a href="">
+                            <h4 class="widget_title" style="cursor: pointer">Meal Plan</h4>
+                        </a>
                         <ul class="list cat-list">
                             <!-- To Eat Section -->
                             <li>
-                                <a href="#" class="d-flex justify-content-between">
+                                <a href="javascript:{}" class="d-flex justify-content-between" data-toggle="modal"
+                                    data-target="#toEatModal">
                                     <p>To Eat</p>
                                     <p>37</p>
                                 </a>
                             </li>
                             <!-- To Avoid Section -->
                             <li>
-                                <a href="#" class="d-flex justify-content-between">
+                                <a href="javascript:{}" class="d-flex justify-content-between" data-toggle="modal"
+                                    data-target="#toAvoidModal">
                                     <p>To Avoid</p>
                                     <p>24</p>
                                 </a>
                             </li>
                             <!-- Liquids Section -->
                             <li>
-                                <a href="#" class="d-flex justify-content-between">
+                                <a href="javascript:{}" class="d-flex justify-content-between" data-toggle="modal"
+                                    data-target="#liquidsModal">
                                     <p>Liquid(s)</p>
                                     <p>
                                         <?php if($mealplan_liquids){echo count($mealplan_liquids);}else{echo "0";} ?>
@@ -81,7 +80,8 @@
                             </li>
                             <!-- Snacks Section -->
                             <li>
-                                <a href="#" class="d-flex justify-content-between">
+                                <a href="javascript:{}" class="d-flex justify-content-between" data-toggle="modal"
+                                    data-target="#snacksModal">
                                     <p>Snack(s)</p>
                                     <p>
                                         <?php if($mealplan_snacks){echo count($mealplan_snacks);}else{echo "0";} ?>
@@ -90,7 +90,8 @@
                             </li>
                             <!-- Meals Section -->
                             <li>
-                                <a href="#" class="d-flex justify-content-between">
+                                <a href="javascript:{}" class="d-flex justify-content-between" data-toggle="modal"
+                                    data-target="#mealsModal">
                                     <p>Meal(s)</p>
                                     <p>
                                         <?php if($mealplan_foods){echo count($mealplan_foods);}else{echo "0";} ?>
@@ -101,7 +102,9 @@
                         <div class="br"></div>
                     </aside>
                     <aside class="single-sidebar-widget newsletter_widget">
-                        <h4 class="widget_title">Shopping List</h4>
+                        <a href="">
+                            <h4 class="widget_title" style="cursor: pointer">Shopping List</h4>
+                        </a>
                     </aside>
                     <!-- <aside class="single-sidebar-widget tag_cloud_widget">
                         <ul class="list">
@@ -124,4 +127,12 @@
         </div>
     </div>
 </section>
-<!--================Blog Area =================-->
+<!--================ Info Area =================-->
+
+<!-- Importing Modals -->
+<?php $this->load->view('site/home/modals/liquids_modal');?>
+<?php $this->load->view('site/home/modals/meals_modal');?>
+<?php $this->load->view('site/home/modals/shoppinglist_modal');?>
+<?php $this->load->view('site/home/modals/snacks_modal');?>
+<?php $this->load->view('site/home/modals/toavoid_modal');?>
+<?php $this->load->view('site/home/modals/toeat_modal');?>

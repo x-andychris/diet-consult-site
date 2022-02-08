@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="<?php echo base_url('assets/css/jquery.datetimepicker.min.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/linearicons.css'); ?>">
     <!-- <link rel="stylesheet" href="<?php echo base_url('assets/css/nice-select.css'); ?>"> -->
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/table.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/style.css'); ?>">
     <!-- Javascript -->
     <script src="<?php echo base_url('assets/js/vendor/jquery-2.2.4.min.js'); ?>"></script>
@@ -63,7 +64,7 @@
             <div class="container">
                 <div class="row align-items-center justify-content-between d-flex">
                     <div id="logo">
-                        <a href="index.html">
+                        <a href="<?php echo base_url(); ?>">
                             <img src="<?php echo base_url('assets/images/logo/logo.png'); ?>" alt="" title="" />
                         </a>
                     </div>

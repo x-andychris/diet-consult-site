@@ -14,6 +14,7 @@ class Home extends CI_Controller {
         $this -> load -> model('Liquids_Model');
         $this -> load -> model('Snacks_Model');
         $this -> load -> model('Ingredients_Model');
+        $this -> load -> model('ShoppingList_Model');
         
     }
 	

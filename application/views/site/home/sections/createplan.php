@@ -30,7 +30,7 @@
             <div class="single-patient">
                 <!-- <img src="<?php echo base_url('assets/images/patient2.png'); ?>" alt=""> -->
                 <img src="<?php echo base_url('assets/images/hand-two-2.png'); ?>" style="object-fit: cover" alt="">
-                <h3>What you get</h3>
+                <h3>What do you get?</h3>
                 <!-- <h5></h5> -->
                 <ul class="unordered-list">
                     <li>

@@ -97,19 +97,13 @@
                                 <h3 class="mb-4">top diets</h3>
                                 <ul>
                                     <li class="mb-2">
-                                        <a href="<?php echo base_url('mealplans/info/'); ?>">managed
-                                            website</a>
+                                        <a href="<?php echo base_url('mealplans/info/2'); ?>">vegan</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="<?php echo base_url('mealplans/info/'); ?>">managed
-                                            reputation</a>
+                                        <a href="<?php echo base_url('mealplans/info/1'); ?>">meat eaters</a>
                                     </li>
                                     <li class="mb-2">
-                                        <a href="<?php echo base_url('mealplans/info/'); ?>">power
-                                            tools</a>
-                                    </li>
-                                    <li>
-                                        <a href="<?php echo base_url('mealplans/info/'); ?>">marketing service</a>
+                                        <a href="<?php echo base_url('mealplans/info/3'); ?>">vegetarian</a>
                                     </li>
                                 </ul>
                             </div>
