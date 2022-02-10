@@ -57,7 +57,15 @@
                                 <a href="javascript:{}" class="d-flex justify-content-between" data-toggle="modal"
                                     data-target="#toEatModal">
                                     <p>To Eat</p>
-                                    <p>37</p>
+                                    <p>
+                                        <?php if ($mealplan_ingredients){ ?>
+                                        <?php $totake_count = 0; ?>
+                                        <?php foreach($mealplan_ingredients as $row) :?>
+                                        <?php if($row -> consumption == "Take"){ $totake_count++;} ?>
+                                        <?php endforeach; ?>
+                                        <?php  echo $totake_count; ?>
+                                        <?php } else{ echo "0";} ?>
+                                    </p>
                                 </a>
                             </li>
                             <!-- To Avoid Section -->
@@ -65,7 +73,15 @@
                                 <a href="javascript:{}" class="d-flex justify-content-between" data-toggle="modal"
                                     data-target="#toAvoidModal">
                                     <p>To Avoid</p>
-                                    <p>24</p>
+                                    <p>
+                                        <?php if ($mealplan_ingredients){ ?>
+                                        <?php $toavoid_count = 0; ?>
+                                        <?php foreach($mealplan_ingredients as $row) :?>
+                                        <?php if($row -> consumption == "Avoid"){ $toavoid_count++;} ?>
+                                        <?php endforeach; ?>
+                                        <?php  echo $toavoid_count; ?>
+                                        <?php } else{ echo "0";} ?>
+                                    </p>
                                 </a>
                             </li>
                             <!-- Liquids Section -->
