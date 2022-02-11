@@ -13,6 +13,10 @@
     <!-- Favicon -->
     <link rel="shortcut icon" href="<?php echo base_url('assets/images/logo/favicon.png'); ?>" type="image/x-icon">
 
+    <?php if (strpos($page_title, "(Plan)")) { ?>
+    <link rel="stylesheet" href="<?php echo base_url('assets/css/business-casual.min.css'); ?>">
+    <?php } ?>
+
     <!-- CSS Files -->
     <link rel="stylesheet" href="<?php echo base_url('assets/css/animate-3.7.0.css'); ?>">
     <link rel="stylesheet" href="<?php echo base_url('assets/css/font-awesome-4.7.0.min.css'); ?>">

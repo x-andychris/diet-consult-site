@@ -58,7 +58,9 @@ $route['login'] = 'Auth/login';
 $route['register'] = 'Auth/register';
 
 $route['mealplans'] = 'Home/mealplans';
-$route['mealplans/info/(:any)'] = 'Home/mealplan_info/$1';
+$route['mealplans/(:any)/info'] = 'Home/mealplan_info/$1';
+$route['mealplans/(:any)/plan'] = 'Home/mealplan_plan/$1';
+$route['mealplans/(:any)/shoppinglist'] = 'Home/mealplan_shoppinglist/$1';
 
 $route['my/mealplan'] = 'MyMealPlan/mealplan';
 

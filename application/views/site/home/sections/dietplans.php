@@ -20,7 +20,7 @@
                         <img src="<?php echo base_url('assets/images/mealplans/' . $row -> image); ?>"
                             style="width: 367px; height: 246px" alt="" class="img-fluid">
                         <div class="hover-state">
-                            <a href="<?php echo base_url('mealplans/info/' . $row -> diet_type_id); ?>"><i
+                            <a href="<?php echo base_url('mealplans/' . $row -> diet_type_id . '/info'); ?>"><i
                                     class="fa fa-stethoscope"></i>
                             </a>
                         </div>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2022 at 07:25 PM
+-- Generation Time: Feb 11, 2022 at 02:50 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -57,7 +57,7 @@ CREATE TABLE `diet_types` (
   `description` varchar(6500) DEFAULT NULL,
   `image` varchar(50) DEFAULT NULL,
   `diet_super` int(11) DEFAULT NULL,
-  `calorie_tracking` tinyint(1) NOT NULL,
+  `is_calorie_tracking` tinyint(1) NOT NULL,
   `calorie_intake_per_day` varchar(30) DEFAULT NULL,
   `calorie_burnt_per_day` varchar(30) DEFAULT NULL,
   `is_blood_group` tinyint(1) NOT NULL,
@@ -68,7 +68,7 @@ CREATE TABLE `diet_types` (
 -- Dumping data for table `diet_types`
 --
 
-INSERT INTO `diet_types` (`diet_type_id`, `plan`, `summary`, `description`, `image`, `diet_super`, `calorie_tracking`, `calorie_intake_per_day`, `calorie_burnt_per_day`, `is_blood_group`, `date_added`) VALUES
+INSERT INTO `diet_types` (`diet_type_id`, `plan`, `summary`, `description`, `image`, `diet_super`, `is_calorie_tracking`, `calorie_intake_per_day`, `calorie_burnt_per_day`, `is_blood_group`, `date_added`) VALUES
 (1, 'Meat Eaters', NULL, NULL, 'meateaters.png', NULL, 0, NULL, NULL, 0, '2022-02-03 13:56:46'),
 (2, 'Vegan', NULL, NULL, 'vegan.png', NULL, 0, NULL, NULL, 0, '2022-02-03 13:56:46'),
 (3, 'Vegeterian', 'To get the most out of a vegetarian diet, choose a variety of healthy plant-based foods, such as whole fruits and vegetables, legumes and nuts, and whole grains.', 'Vegetarian diets continue to increase in popularity. Reasons for following a vegetarian diet are varied but include health benefits, such as reducing your risk of heart disease, diabetes and some cancers.\r\n\r\nYet some vegetarians rely too heavily on processed foods, which can be high in calories, sugar, fat and sodium. And they may not eat enough fruits, vegetables, whole grains and calcium-rich foods, thus missing out on the nutrients they provide.\r\n\r\nHowever, with a little planning a vegetarian diet can meet the needs of people of all ages, including children, teenagers, and pregnant or breast-feeding women. The key is to be aware of your nutritional needs so that you plan a diet that meets them.', 'vegeterian.png', NULL, 0, NULL, NULL, 0, '2022-02-03 13:56:46');

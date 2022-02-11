@@ -58,28 +58,28 @@
                     id="registerform">
                     <div class="row">
                         <div class="col-sm-6 form-group">
-                            <input type="text" placeholder="First Name" onfocus="this.placeholder = ''"
+                            <input type="text" name="firstname" placeholder="First Name" onfocus="this.placeholder = ''"
                                 onblur="this.placeholder = 'First Name'" required>
                         </div>
                         <div class="col-sm-6 form-group">
-                            <input type="text" placeholder="Last Name" onfocus="this.placeholder = ''"
+                            <input type="text" name="lastname" placeholder="Last Name" onfocus="this.placeholder = ''"
                                 onblur="this.placeholder = 'Last Name'" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="text" id="datepicker" placeholder="Date of birth" onfocus="this.placeholder = ''"
+                        <input type="date" name="dob" placeholder="Date of birth" onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'Date of birth'">
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-6 form-group">
-                            <select class="form-control" required>
+                            <select class="form-control" name="gender" required>
                                 <option value="" selected hidden disabled> Select Gender </option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
                         <div class="col-sm-6 col-6 form-group">
-                            <select class="form-control" required>
+                            <select class="form-control" name="bloodgroup" required>
                                 <option value="" selected hidden disabled>Select Blood Group</option>
                                 <option value="A-">A-</option>
                                 <option value="A+">A+</option>
@@ -94,21 +94,31 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-6 form-group">
-                            <input type="number" placeholder="Weight (Kg)" onfocus="this.placeholder = ''"
+                            <input type="number" name="weight" placeholder="Weight (Kg)" onfocus="this.placeholder = ''"
                                 onblur="this.placeholder = 'Weight (Kg)'" required>
                         </div>
                         <div class="col-sm-6 col-6 form-group">
-                            <input type="number" placeholder="Height (Ft)" onfocus="this.placeholder = ''"
+                            <input type="number" name="height" placeholder="Height (Ft)" onfocus="this.placeholder = ''"
                                 onblur="this.placeholder = 'Height (Ft)'" required>
                         </div>
                     </div>
                     <div class="form-group">
-                        <input type="email" placeholder="Your Email" onfocus="this.placeholder = ''"
+                        <select class="form-control" name="dietplan" required>
+                            <option value="" selected hidden disabled>Select Diet Plan</option>
+                            <?php if ($mealplans){ ?>
+                            <?php foreach($mealplans as $row) :?>
+                            <option value="<?php echo $row -> diet_type_id; ?>"><?php echo $row -> plan; ?></option>
+                            <?php endforeach; ?>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Your Email" onfocus="this.placeholder = ''"
                             onblur="this.placeholder = 'Your Email'" required>
                     </div>
                     <div class="form-group">
-                        <input type="password" placeholder="Set Password" onfocus="this.placeholder = ''"
-                            onblur="this.placeholder = 'Set Password'" required>
+                        <input type="password" name="password" placeholder="Set Password"
+                            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Set Password'" required>
                     </div>
                     <!-- <div class="form-group">
                         <textarea name="message" cols="20" rows="7" placeholder="Message"
