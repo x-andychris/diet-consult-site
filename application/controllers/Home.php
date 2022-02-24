@@ -27,6 +27,13 @@ class Home extends CI_Controller {
 		$mealplans = $this -> DietTypes_Model -> get_all();
 		$data["mealplans"] = $mealplans;
 
+		$userinfo = null;
+		if($this->session->userdata('account_id') != '') { 
+			$userinfo = $this -> Accounts_Model -> get_info($this->session->userdata('account_id'));
+		}
+
+		$data["userinfo"] = $userinfo;
+
 		$this->render('home', $data);
 	}
 
@@ -81,6 +88,12 @@ class Home extends CI_Controller {
 	public function mealplan_plan($diet_type_id)
 	{
         $data = [];
+
+		// checking if user is logged in
+		if($this->session->userdata('account_id') == '') { 
+			$this->session->set_flashdata('alt',"You have to be logged in to access resource");
+		    redirect($_SERVER['HTTP_REFERER']); return;
+		}
 		
 		// checking if meal plan exists
 		$mealplan_info = $this -> DietTypes_Model -> get_info($diet_type_id);

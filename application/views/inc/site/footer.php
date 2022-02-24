@@ -165,6 +165,9 @@
         </footer>
         <!-- Footer Area End -->
 
+        <!-- Loading modals -->
+        <?php $this->load->view('inc/site/modals/signin_modal');?>
+
         <!-- Toast Area start -->
         <!-- <div style="position: fixed; top: 6%; right: 1%; background-color: white; padding: 10px; width: 300px"> -->
         <div>

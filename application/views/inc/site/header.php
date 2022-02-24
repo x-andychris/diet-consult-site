@@ -85,12 +85,17 @@
                                 </ul> -->
                             </li>
                             <li><a href="<?php echo base_url('my/mealplan'); ?>">My Meal Plan</a></li>
+                            <?php if($_SESSION["account_id"] == ""){ ?>
                             <li>
-                                <a href="contact.html">Login</a>/
+                                <a href="javascript:{}" data-toggle="modal" data-target="#signInModal">Login</a>/
                                 <a href="<?php echo base_url('#createplan'); ?>">Sign Up</a>
                             </li>
+                            <?php } else{ ?>
+                            <li><a href="<?php echo base_url('my/mealplan'); ?>">My Profile</a></li>
+                            <li><a href="<?php echo base_url('q/logout'); ?>">Logout</a></li>
+                            <?php } ?>
                         </ul>
-                    </nav><!-- #nav-menu-container -->
+                    </nav>
                 </div>
             </div>
         </div>

@@ -16,7 +16,7 @@ class MyMealPlan extends CI_Controller {
         
         if($this->session->userdata('account_id') == '') { 
 			$this->session->set_flashdata('alt',"You have to be logged in to access resource");
-			redirect("mealplans"); 
+			redirect(""); 
 		}
     }
 
@@ -27,14 +27,27 @@ class MyMealPlan extends CI_Controller {
 		$data["page_title"] = "My Meal Plan";
 
 		$userinfo = $this -> Accounts_Model -> get_info($this->session->userdata('account_id'));
-		$mealplan_info = $this -> DietTypes_Model -> get_info($userinfo -> choosen_plan);
-		$mealplan_foods = $this -> Foods_Model -> get_multiple_by("diet_type_id", $mealplan_info -> diet_type_id);
 		
-		$data["user_info"] = $userinfo;
+		// checking if meal plan exists
+		$mealplan_info = $this -> DietTypes_Model -> get_info($userinfo -> choosen_plan);
+		if (!$mealplan_info){
+			$data["page_title"] = "404";
+			$this->load->view('inc/site/header', $data);
+			$this->load->view('inc/errors/error_404'); 
+			$this->load->view('inc/site/footer', $data); return;
+		}
+
+		// getting information associated with plan
+		$mealplan_foods = $this -> Foods_Model -> get_multiple_by("diet_type_id", $userinfo -> choosen_plan);
+		$mealplans = $this -> DietTypes_Model -> get_all();
+		
 		$data["mealplan_info"] = $mealplan_info;
 		$data["mealplan_foods"] = $mealplan_foods;
+		$data["mealplans"] = $mealplans;
 
-        $this->render('mealplan', $data);
+        $this->render('myplan', $data);
+
+        // redirect('mealplans/'. $userinfo -> choosen_plan . '/info');
 	}
 
 	// ------------------------------------------------------------ (To Eat Section) --------------------------------------------------------------

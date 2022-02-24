@@ -14,14 +14,6 @@ class Auth extends CI_Controller {
     }
 
 	// ------------------------------------------------------------ (Login Section) --------------------------------------------------------------
-	public function login()
-	{
-        $data = [];
-		$data["page_title"] = "Login";
-
-        $this->render('login', $data);
-	}
-	
 	public function login_action()
 	{
         $data = [];
@@ -43,7 +35,7 @@ class Auth extends CI_Controller {
 		$this->session->set_flashdata('password', $password);
 		
 		// if no user matches the email and password
-		if(!$userinfo){
+		if($userinfo == False){
 			$this->session->set_flashdata('error', 'Incorrect Username or Password');
 			redirect($_SERVER['HTTP_REFERER']); return;
 		}
@@ -53,18 +45,11 @@ class Auth extends CI_Controller {
 		$this->session->set_userdata('first_name', ''. $userinfo -> first_name);
 		$this->session->set_userdata('diet_type', ''. $userinfo -> choosen_plan);
 		
+		$this->session->set_flashdata('success', 'Login Successful');
 		redirect($_SERVER['HTTP_REFERER']);
 	}
 
 	// ------------------------------------------------------------ (Register Section) --------------------------------------------------------------
-	public function register()
-	{
-		$data = [];
-		$data["page_title"] = "Register";
-
-		$this-> render('register', $data);
-	}
-
 	public function register_action()
 	{
 		$data = [];
@@ -76,8 +61,8 @@ class Auth extends CI_Controller {
 		}
 		// compiling the information to be inserted
 	    $data = array(
-			'first_name' => trim($_POST['first_name']),
-			'last_name' => trim($_POST['last_name']),
+			'first_name' => trim($_POST['firstname']),
+			'last_name' => trim($_POST['lastname']),
 			'gender' => trim($_POST['gender']),
 			'dob' => $_POST['dob'],
 			'weight' => $_POST['weight'],
@@ -85,7 +70,7 @@ class Auth extends CI_Controller {
 			'blood_group' => trim($_POST['blood_group']),
 			'email' => trim($_POST['email']),
 			'password' => password_hash(trim($_POST['password']), PASSWORD_DEFAULT),
-			// 'choosen_plan' => $_POST['choosen_plan'],
+			'choosen_plan' => $_POST['dietplan'],
 		);
 
 		// setting flash data incase the register action isn't successful
@@ -99,13 +84,16 @@ class Auth extends CI_Controller {
 		}
 
 		// inserting into the database
-		$status = $this -> Accounts_Model -> add($data);
+		$account_id = $this -> Accounts_Model -> add($data);
 		// action if insert was successful
-		if($status){
+		if($account_id){
+			$this->session->set_userdata('account_id', ''. $account_id);
+			$this->session->set_userdata('first_name', ''. trim($_POST['first_name']));
+			$this->session->set_userdata('diet_type', ''. $_POST['dietplan']);
+			
 			$this->session->set_flashdata('success','Account Created Successfully');
 			redirect($_SERVER['HTTP_REFERER']); return;
 		}
-		// if not successful
 		else{
 			$this->session->set_flashdata('error','Error while creating account');
 			redirect($_SERVER['HTTP_REFERER']); return;
@@ -121,7 +109,7 @@ class Auth extends CI_Controller {
 		$this->session->set_userdata('first_name', '');
 		$this->session->set_userdata('diet_type', '');
 		
-		redirect('login');
+		redirect('');
 	}
 
 	// function to render the pages

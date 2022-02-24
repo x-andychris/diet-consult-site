@@ -54,7 +54,6 @@ $route['404_override'] = 'Error_404';
 $route['translate_uri_dashes'] = FALSE;
 
 // ------------- custom routes ----------------
-$route['login'] = 'Auth/login';
 $route['register'] = 'Auth/register';
 
 $route['mealplans'] = 'Home/mealplans';
@@ -76,6 +75,7 @@ $route['my/profile'] = 'Profile/profile';
 // ------------- db queries ----------------
 $route['q/login'] = 'Auth/login_action';
 $route['q/register'] = 'Auth/register_action';
+$route['q/logout'] = 'Profile/logout_action';
 
 $route['q/updateprofile'] = 'Profile/update_profile_action';
 $route['q/updatepassword'] = 'Profile/update_password_action';

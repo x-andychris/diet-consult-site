@@ -13,7 +13,7 @@ class Profile extends CI_Controller {
         
         if($this->session->userdata('account_id') == '') { 
 			$this->session->set_flashdata('alt',"You have to be logged in to access resource");
-			redirect("mealplans"); 
+			redirect("#mealplans"); 
 		}
     }
 
@@ -151,6 +151,17 @@ class Profile extends CI_Controller {
 			$this->session->set_flashdata('error','Error while updating meal plan');
 			redirect($_SERVER['HTTP_REFERER']); return;
 		}
+	}
+
+	// ------------------------------------------------------------ (Logout Section) --------------------------------------------------------------
+	public function logout_action()
+	{
+		$this->session->set_userdata('account_id', '');
+		$this->session->set_userdata('first_name', '');
+		$this->session->set_userdata('diet_type', '');
+		
+		$this->session->set_flashdata('success','Logout Successful');
+		redirect('');
 	}
 
 

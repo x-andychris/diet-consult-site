@@ -48,7 +48,7 @@ class accounts_model extends CI_model {
             $rowitem = $query -> row();
             // verifying the encrypted password
             if(password_verify($password, $rowitem -> password)){
-                return $query -> row();
+                return $rowitem;
             }
             else {return FALSE;}
         } 
