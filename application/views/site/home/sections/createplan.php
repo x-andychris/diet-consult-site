@@ -52,7 +52,7 @@
             </div>
         </div>
         <!-- If not logged in -->
-        <?php if($_SESSION["account_id"] == ""){ ?>
+        <?php if(!isset($_SESSION["account_id"]) || $_SESSION["account_id"] == ""){ ?>
         <div class="col-lg-6 offset-lg-1 align-self-center">
             <div class="appointment-form text-center mt-5 mt-lg-0">
                 <h3 class="mb-5">Your Information</h3>
@@ -127,7 +127,7 @@
             </div>
         </div>
         <?php } else{ ?>
-        <div class="col-lg-6 offset-lg-1 align-self-center">
+        <div class="col-lg-6 offset-lg-1 align-self-center" id="profile">
             <div class="appointment-form text-center mt-5 mt-lg-0">
                 <h3 class="mb-5">Profile Information</h3>
                 <form action="<?php echo base_url('q/updateprofile'); ?>" method="post" enctype="multipart/form-data"
@@ -148,14 +148,18 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-6 form-group">
-                            <select class="form-control" name="gender" required>
+                            <select class="form-control" name="gender" id="genderSelect" required>
                                 <option value="" selected hidden disabled> Select Gender </option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                             </select>
                         </div>
+                        <script>
+                        var selectvalue = "<?php echo $userinfo -> gender; ?>";
+                        document.getElementById("genderSelect").value = selectvalue;
+                        </script>
                         <div class="col-sm-6 col-6 form-group">
-                            <select class="form-control" name="bloodgroup" required>
+                            <select class="form-control" name="bloodgroup" id="bloodgroupSelect" required>
                                 <option value="" selected hidden disabled>Select Blood Group</option>
                                 <option value="A-">A-</option>
                                 <option value="A+">A+</option>
@@ -167,6 +171,10 @@
                                 <option value="AB+">AB+</option>
                             </select>
                         </div>
+                        <script>
+                        var selectvalue = "<?php echo $userinfo -> blood_group; ?>";
+                        document.getElementById("bloodgroupSelect").value = selectvalue;
+                        </script>
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-6 form-group">
@@ -179,7 +187,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <select class="form-control" name="dietplan" required>
+                        <select class="form-control" name="dietplan" id="dietplanSelect" required>
                             <option value="" selected hidden disabled>Select Diet Plan</option>
                             <?php if ($mealplans){ ?>
                             <?php foreach($mealplans as $row) :?>
@@ -188,6 +196,10 @@
                             <?php } ?>
                         </select>
                     </div>
+                    <script>
+                    var selectvalue = "<?php echo $userinfo -> choosen_plan; ?>";
+                    document.getElementById("dietplanSelect").value = selectvalue;
+                    </script>
                     <div class="form-group">
                         <input type="email" name="email" value="<?php echo $userinfo -> email; ?>"
                             placeholder="Your Email" required>

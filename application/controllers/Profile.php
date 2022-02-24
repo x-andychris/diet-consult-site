@@ -42,14 +42,15 @@ class Profile extends CI_Controller {
 		
 		// compiling the information to be inserted
 	    $data = array(
-			'first_name' => trim($_POST['first_name']),
-			'last_name' => trim($_POST['last_name']),
+			'first_name' => trim($_POST['firstname']),
+			'last_name' => trim($_POST['lastname']),
 			'gender' => trim($_POST['gender']),
-			'age' => $_POST['age'],
+			'dob' => $_POST['dob'],
 			'weight' => $_POST['weight'],
 			'height' => $_POST['height'],
-			'blood_group' => trim($_POST['blood_group']),
+			'blood_group' => trim($_POST['bloodgroup']),
 			'email' => trim($_POST['email']),
+			'choosen_plan' => $_POST['dietplan'],
 		);
 
 		// setting flash data incase the action isn't successful

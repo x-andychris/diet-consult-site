@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 11, 2022 at 02:50 PM
+-- Generation Time: Feb 24, 2022 at 05:33 PM
 -- Server version: 10.3.16-MariaDB
 -- PHP Version: 7.3.7
 
@@ -43,6 +43,13 @@ CREATE TABLE `accounts` (
   `suggested_plan` int(11) DEFAULT NULL,
   `date_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `accounts`
+--
+
+INSERT INTO `accounts` (`account_id`, `first_name`, `last_name`, `gender`, `dob`, `weight`, `height`, `blood_group`, `email`, `password`, `choosen_plan`, `suggested_plan`, `date_added`) VALUES
+(2, 'John', 'Doe', 'Male', '2022-02-09', 75, 1, 'B+', 'johndoe@testing.com', '$2y$10$mNWVjQX93Z.w37.DE.8eAO8q84GfGNkHN6MMm/OxHA1rHQwRp63he', 2, NULL, '2022-02-24 13:10:08');
 
 -- --------------------------------------------------------
 
@@ -121,7 +128,7 @@ INSERT INTO `foods` (`food_id`, `diet_type_id`, `food`, `food_list`, `info`, `im
 (22, 3, 'Millet porridge with almond milk & berry compote', NULL, '', NULL, 'Take', 'Any', 'Breakfast', '2022-02-10 16:15:00'),
 (23, 3, 'Veggie Puttanesca', NULL, NULL, NULL, 'Take', 'Any', 'Lunch', '2022-02-10 16:15:00'),
 (24, 3, 'Egg wraps with black beans & rocket', NULL, '', NULL, 'Take', 'Any', 'Lunch', '2022-02-10 16:15:00'),
-(25, 3, 'Spinach-stuffed pizza pies', NULL, '', NULL, 'Take', 'Any', 'Dinner', '2022-02-10 16:15:00'),
+(25, 3, 'Spinach-stuffed pizza pies', NULL, 'Rich in fiber and protein', NULL, 'Take', 'Any', 'Dinner', '2022-02-10 16:15:00'),
 (26, 3, 'Chilli paneer with quinoa', NULL, '', NULL, 'Take', 'Any', 'Dinner', '2022-02-10 16:15:00'),
 (27, 3, 'Spicy veggie pies with peanut butter mash', NULL, 'Loaded with protein and carbs, this meal is ideal for enjoying after a workout.', NULL, 'Take', 'Any', 'Dinner', '2022-02-10 16:15:00'),
 (28, 3, 'Vegan roast spiced squash salad with tahini', NULL, 'Nutrient-rich and packed with flavour, this salad is as good chilled for lunch the next day as it is fresh from the oven.', NULL, 'Take', 'Any', 'Dinner', '2022-02-10 16:15:00'),
@@ -325,6 +332,12 @@ CREATE TABLE `to_eat` (
 --
 
 --
+-- Indexes for table `accounts`
+--
+ALTER TABLE `accounts`
+  ADD PRIMARY KEY (`account_id`);
+
+--
 -- Indexes for table `diet_types`
 --
 ALTER TABLE `diet_types`
@@ -371,6 +384,12 @@ ALTER TABLE `to_eat`
 --
 
 --
+-- AUTO_INCREMENT for table `accounts`
+--
+ALTER TABLE `accounts`
+  MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `diet_types`
 --
 ALTER TABLE `diet_types`
@@ -380,7 +399,7 @@ ALTER TABLE `diet_types`
 -- AUTO_INCREMENT for table `foods`
 --
 ALTER TABLE `foods`
-  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `food_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
 -- AUTO_INCREMENT for table `ingredients`

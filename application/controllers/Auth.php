@@ -67,7 +67,7 @@ class Auth extends CI_Controller {
 			'dob' => $_POST['dob'],
 			'weight' => $_POST['weight'],
 			'height' => $_POST['height'],
-			'blood_group' => trim($_POST['blood_group']),
+			'blood_group' => trim($_POST['bloodgroup']),
 			'email' => trim($_POST['email']),
 			'password' => password_hash(trim($_POST['password']), PASSWORD_DEFAULT),
 			'choosen_plan' => $_POST['dietplan'],
