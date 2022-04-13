@@ -11,6 +11,16 @@ class Auth extends CI_Controller {
         $this -> load -> model('Accounts_Model');
         
         if($this->session->userdata('account_id') != '') { redirect("my/mealplan"); }
+		// clear cookies
+		if (isset($_SERVER['HTTP_COOKIE'])) {
+			$cookies = explode(';', $_SERVER['HTTP_COOKIE']);
+			foreach($cookies as $cookie) {
+				$parts = explode('=', $cookie);
+				$name = trim($parts[0]);
+				setcookie($name, '', time()-1000);
+				setcookie($name, '', time()-1000, '/');
+			}
+		}
     }
 
 	// ------------------------------------------------------------ (Login Section) --------------------------------------------------------------
